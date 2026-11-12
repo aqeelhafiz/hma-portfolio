@@ -112,7 +112,7 @@ const SELECTED_PROJECTS: SelectedWorkItem[] = [
     stack: 'Next.js · Framer Motion',
     badge: 'Interactive Web',
     src: 'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto/v1790316294/Screen_Recording_2026-09-14_185240_pobr0u.mp4',
-    poster: 'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto,so_2/v1790316294/Screen_Recording_2026-09-14_185240_pobr0u.jpg',
+    poster: 'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto,w_800,c_limit,so_2/v1790316294/Screen_Recording_2026-09-14_185240_pobr0u.jpg',
     aspect: 'landscape',
     vertical: false,
     buttonType: 'web',
@@ -130,7 +130,7 @@ const SELECTED_PROJECTS: SelectedWorkItem[] = [
     badge: 'Vertical Reel',
     src: 'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto/v1790316374/Creating_fashion_video_with_snea__20260918153012_wooon2.mp4',
     poster:
-      'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto,so_1/v1790316374/Creating_fashion_video_with_snea__20260918153012_wooon2.jpg',
+      'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto,w_600,c_limit,so_1/v1790316374/Creating_fashion_video_with_snea__20260918153012_wooon2.jpg',
     aspect: 'portrait',
     vertical: true,
     buttonType: 'film',
@@ -147,7 +147,7 @@ const SELECTED_PROJECTS: SelectedWorkItem[] = [
     badge: 'Cinematic 3D',
     src: 'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto/v1790316408/Man_spraying_perfume_1080p_20260918154146_nd9suw.mp4',
     poster:
-      'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto,so_1/v1790316408/Man_spraying_perfume_1080p_20260918154146_nd9suw.jpg',
+      'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto,w_800,c_limit,so_1/v1790316408/Man_spraying_perfume_1080p_20260918154146_nd9suw.jpg',
     aspect: 'landscape',
     vertical: false,
     buttonType: 'film',
@@ -444,7 +444,7 @@ function MaskText({
   return (
     <motion.span
       className="block"
-      initial="hidden"
+      initial={animate ? false : 'hidden'}
       {...(animate
         ? { animate }
         : {
@@ -456,6 +456,7 @@ function MaskText({
         <span key={i} className="block overflow-hidden pb-[0.14em] -mb-[0.14em]">
           <motion.span
             className="block will-change-transform"
+            initial={animate ? false : undefined}
             variants={{
               hidden: {
                 y: reduce ? '0%' : fromTop ? '-108%' : '108%',
@@ -682,10 +683,10 @@ function DesktopCardContent({
           {/* Clean Attribution Line */}
           <div className="flex items-center gap-2 pt-4 mt-4 border-t border-[rgba(15,23,42,0.06)] text-[12.5px] font-mono text-[#5B6475]">
             <span className="text-[#0F172A] font-semibold">{project.client}</span>
-            <span className="text-[#8A93A3]">·</span>
+            <span className="text-[#536174]">·</span>
             <span>{project.role}</span>
-            <span className="text-[#8A93A3]">·</span>
-            <span className="text-[#8A93A3]">{project.stack}</span>
+            <span className="text-[#536174]">·</span>
+            <span className="text-[#536174]">{project.stack}</span>
           </div>
 
           {/* Button: "View Site" for web, "Watch Film" for film */}
@@ -747,7 +748,7 @@ function DesktopCardContent({
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="none"
               className="w-full h-full object-cover"
             />
 
@@ -773,8 +774,8 @@ function DesktopCardContent({
             {/* Bottom Counter Bar */}
             <div className="absolute bottom-3.5 left-3.5 z-20 flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-black/10 text-[11px] font-mono text-[#0F172A] shadow-sm">
               <span className="font-bold text-[#0F172A]">{project.n}</span>
-              <span className="text-[#8A93A3]">/</span>
-              <span className="text-[#8A93A3]">03</span>
+              <span className="text-[#536174]">/</span>
+              <span className="text-[#536174]">03</span>
               <span className="h-2.5 w-px bg-black/10 mx-0.5" />
               <span className="text-[#0F172A] font-sans text-[11px] font-medium">{project.title}</span>
             </div>
@@ -913,8 +914,8 @@ function DesktopSelectedWork({ onOpenVideo }: { onOpenVideo: (p: SelectedWorkIte
                   0{activeIdx + 1}
                 </motion.span>
               </span>
-              <span className="text-[#8A93A3] mx-0.5">/</span>
-              <span className="text-[#8A93A3]">03</span>
+              <span className="text-[#536174] mx-0.5">/</span>
+              <span className="text-[#536174]">03</span>
             </div>
             <div className="w-[2px] h-16 bg-neutral-200 rounded-full relative overflow-hidden">
               <motion.div
@@ -923,18 +924,22 @@ function DesktopSelectedWork({ onOpenVideo }: { onOpenVideo: (p: SelectedWorkIte
                 className="w-full bg-[#0F172A]"
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
               {SELECTED_PROJECTS.map((p, idx) => (
                 <button
                   key={p.n}
                   onClick={() => scrollToCard(idx)}
                   aria-label={`Scroll to Project ${p.n}: ${p.title}`}
-                  className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A] focus-visible:outline-none ${
-                    activeIdx === idx
-                      ? 'bg-[#0F172A] scale-125'
-                      : 'bg-[#8A93A3]/40 hover:bg-[#8A93A3]'
-                  }`}
-                />
+                  className="min-h-[32px] min-w-[32px] flex items-center justify-center cursor-pointer p-1 focus-visible:ring-2 focus-visible:ring-[#0F172A] focus-visible:outline-none rounded-full"
+                >
+                  <span
+                    className={`w-2.5 h-2.5 rounded-full transition-all ${
+                      activeIdx === idx
+                        ? 'bg-[#0F172A] scale-125'
+                        : 'bg-[#536174]/40 hover:bg-[#536174]'
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </motion.aside>
@@ -1096,7 +1101,7 @@ function MobileCardContent({
               muted
               playsInline
               webkit-playsinline="true"
-              preload="auto"
+              preload="none"
               className="w-full h-full object-contain"
             />
             <div className="absolute inset-0 bg-[#0F172A]/15 opacity-0 active:opacity-100 transition-opacity flex items-center justify-center">
@@ -1118,7 +1123,7 @@ function MobileCardContent({
               muted
               playsInline
               webkit-playsinline="true"
-              preload="auto"
+              preload="none"
               className="w-full h-full object-contain"
             />
             <div className="absolute inset-0 bg-[#0F172A]/15 opacity-0 active:opacity-100 transition-opacity flex items-center justify-center">
@@ -1349,17 +1354,21 @@ function MobileSelectedWork({ onOpenVideo }: { onOpenVideo: (p: SelectedWorkItem
         </div>
 
         {/* Mobile Mini Progress Indicator Dots */}
-        <div className="flex items-center justify-center gap-2 mt-2 select-none">
+        <div className="flex items-center justify-center gap-1 mt-2 select-none">
           {SELECTED_PROJECTS.map((p, idx) => (
             <button
               key={p.n}
               type="button"
               onClick={() => scrollToCard(idx)}
               aria-label={`Scroll to Project 0${idx + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                activeIdx === idx ? 'w-6 bg-[#0F172A]' : 'w-2 bg-[#0F172A]/25'
-              }`}
-            />
+              className="min-h-[44px] min-w-[32px] flex items-center justify-center cursor-pointer p-1"
+            >
+              <span
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeIdx === idx ? 'w-6 bg-[#0F172A]' : 'w-2 bg-[#0F172A]/25'
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>
@@ -1756,8 +1765,8 @@ function Hero() {
   const heroY = useTransform(scrollY, [0, 500], reduce ? [0, 0] : [0, -60])
 
   // Track intro loader choreography and viewport-based replay
-  const [introReady, setIntroReady] = useState(false)
-  const isHeroInView = useInView(ref, { once: false, amount: 0.25, margin: '0px 0px -10% 0px' })
+  const [introReady, setIntroReady] = useState(true)
+  const isHeroInView = useInView(ref, { initial: true, once: false, amount: 0.25, margin: '0px 0px -10% 0px' })
 
   useEffect(() => {
     const isDone =
@@ -1810,7 +1819,7 @@ function Hero() {
         <div className="lg:col-span-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-10 lg:gap-12">
           {/* Micro Meta Stack (Focus & Expertise) — Desktop Only */}
           <motion.div
-            initial="hidden"
+            initial={false}
             animate={currentHeroState}
             variants={{
               hidden: { opacity: 0, y: 24, transition: springs.exit },
@@ -1833,7 +1842,7 @@ function Hero() {
           <div className="flex flex-col w-full">
             {/* Status Line on Mobile (Priority 1 — Centered on mobile) */}
             <motion.div
-              initial="hidden"
+              initial={false}
               animate={currentHeroState}
               variants={{
                 hidden: { opacity: 0, y: -10, transition: springs.exit },
@@ -1869,7 +1878,7 @@ function Hero() {
             {/* Desktop Supporting Value Proposition */}
             <motion.p
               data-gsap="hero-reveal"
-              initial="hidden"
+              initial={false}
               animate={currentHeroState}
               variants={{
                 hidden: { opacity: 0, y: 24, transition: springs.exit },
@@ -1886,7 +1895,7 @@ function Hero() {
 
             {/* Mobile Short Supporting Description (Priority 3: Centered on mobile) */}
             <motion.p
-              initial="hidden"
+              initial={false}
               animate={currentHeroState}
               variants={{
                 hidden: { opacity: 0, y: 20, transition: springs.exit },
@@ -1900,7 +1909,7 @@ function Hero() {
             {/* Mobile Portrait (Centerpiece Showcase on mobile, slides in from right with spring) */}
             <figure className="sm:hidden w-full max-w-[170px] xs:max-w-[190px] mx-auto mt-3 mb-2.5 relative z-10">
               <motion.div
-                initial="hidden"
+                initial={false}
                 animate={currentHeroState}
                 variants={{
                   hidden: { opacity: 0, x: 26, scale: 0.9, rotate: 1.5, transition: springs.exit },
@@ -1915,8 +1924,11 @@ function Hero() {
                 className="relative aspect-[4/5] w-full overflow-hidden rounded-[18px] xs:rounded-[22px] bg-neutral-200 ring-1 ring-black/[0.08] shadow-[0_12px_32px_-16px_rgba(21,32,47,0.16)] will-change-transform"
               >
                 <img
-                  src="/portrait.jpg"
+                  src="/portrait.webp"
                   alt="Hafiz Muhammad Aqeel, Founder of HMA Solutions"
+                  width={800}
+                  height={800}
+                  fetchPriority="high"
                   className="h-full w-full object-cover object-[50%_25%] grayscale"
                 />
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/50" />
@@ -1925,7 +1937,7 @@ function Hero() {
 
             {/* Mobile Social Proof Badge (Priority 4: Lower side of portrait) */}
             <motion.div
-              initial="hidden"
+              initial={false}
               animate={currentHeroState}
               variants={{
                 hidden: { opacity: 0, y: 20, scale: 0.92, transition: springs.exit },
@@ -1934,9 +1946,9 @@ function Hero() {
               className="sm:hidden inline-flex items-center justify-center gap-2 rounded-full border border-black/[0.06] bg-white/70 px-2.5 py-1 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.03)] w-fit mx-auto self-center mb-2.5"
             >
               <div className="flex items-center -space-x-1.5">
-                <img src="/images/avatar1_opt.webp" alt="Client avatar" className="h-4.5 w-4.5 rounded-full object-cover ring-1.5 ring-white" />
-                <img src="/images/avatar2_opt.webp" alt="Client avatar" className="h-4.5 w-4.5 rounded-full object-cover ring-1.5 ring-white" />
-                <img src="/images/avatar3_opt.webp" alt="Client avatar" className="h-4.5 w-4.5 rounded-full object-cover ring-1.5 ring-white" />
+                <img src="/images/avatar1_opt.webp" alt="Client avatar" width={24} height={24} className="h-4.5 w-4.5 rounded-full object-cover ring-1.5 ring-white" />
+                <img src="/images/avatar2_opt.webp" alt="Client avatar" width={24} height={24} className="h-4.5 w-4.5 rounded-full object-cover ring-1.5 ring-white" />
+                <img src="/images/avatar3_opt.webp" alt="Client avatar" width={24} height={24} className="h-4.5 w-4.5 rounded-full object-cover ring-1.5 ring-white" />
                 <span className="flex h-4.5 w-4.5 items-center justify-center rounded-full bg-[#15202F] text-[8.5px] font-bold text-white ring-1.5 ring-white">
                   10+
                 </span>
@@ -2032,9 +2044,9 @@ function Hero() {
               className="hidden sm:inline-flex mt-7 items-center gap-3 rounded-full border border-black/[0.06] bg-white/60 px-3.5 py-1.5 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.03)] w-fit"
             >
               <div className="flex items-center -space-x-2">
-                <img src="/images/avatar1_opt.webp" alt="Client avatar" className="h-6 w-6 rounded-full object-cover ring-2 ring-white" />
-                <img src="/images/avatar2_opt.webp" alt="Client avatar" className="h-6 w-6 rounded-full object-cover ring-2 ring-white" />
-                <img src="/images/avatar3_opt.webp" alt="Client avatar" className="h-6 w-6 rounded-full object-cover ring-2 ring-white" />
+                <img src="/images/avatar1_opt.webp" alt="Client avatar" width={24} height={24} className="h-6 w-6 rounded-full object-cover ring-2 ring-white" />
+                <img src="/images/avatar2_opt.webp" alt="Client avatar" width={24} height={24} className="h-6 w-6 rounded-full object-cover ring-2 ring-white" />
+                <img src="/images/avatar3_opt.webp" alt="Client avatar" width={24} height={24} className="h-6 w-6 rounded-full object-cover ring-2 ring-white" />
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#15202F] text-[10px] font-bold text-white ring-2 ring-white">
                   10+
                 </span>
@@ -2052,7 +2064,7 @@ function Hero() {
           className="hidden sm:block lg:col-span-5 w-full sm:max-w-[360px] lg:max-w-[430px] mx-auto lg:mx-0 lg:justify-self-end mt-2 lg:mt-0 relative z-10"
         >
           <motion.div
-            initial="hidden"
+            initial={false}
             animate={currentHeroState}
             variants={{
               hidden: {
@@ -2080,8 +2092,11 @@ function Hero() {
               className="h-full w-full"
             >
               <img
-                src="/portrait.jpg"
+                src="/portrait.webp"
                 alt="Hafiz Muhammad Aqeel, Founder of HMA Solutions"
+                width={800}
+                height={800}
+                fetchPriority="high"
                 className="h-full w-full object-cover object-[50%_25%] grayscale"
               />
             </motion.div>
@@ -2101,7 +2116,7 @@ function Hero() {
         }}
         className="hidden sm:flex absolute bottom-4 left-1/2 -translate-x-1/2 flex-col items-center gap-1.5 pointer-events-none select-none z-20"
       >
-        <span className="text-[9.5px] font-mono tracking-[0.2em] text-[#8A93A3] uppercase">Scroll</span>
+        <span className="text-[9.5px] font-mono tracking-[0.2em] text-[#536174] uppercase">Scroll</span>
         <div className="w-4 h-6 rounded-full border border-black/[0.14] flex justify-center p-0.5">
           <motion.div
             animate={reduce || currentHeroState !== 'visible' ? undefined : { y: [0, 6, 0] }}
@@ -2779,7 +2794,7 @@ function NameWord({ initial, rest, collapse }: { initial: string; rest: string; 
     <span className="inline-flex items-baseline">
       <span className="font-semibold text-neutral-950">{initial}</span>
       <motion.span style={{ width }} className="inline-block overflow-hidden whitespace-nowrap">
-        <motion.span ref={restRef} style={{ opacity, filter: blur, y }} className="inline-block font-light text-neutral-400">
+        <motion.span ref={restRef} style={{ opacity, filter: blur, y }} className="inline-block font-light text-neutral-600">
           {rest}
         </motion.span>
       </motion.span>
@@ -2825,7 +2840,7 @@ function SignatureFooter() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
                 <span className="tracking-tight">{EMAIL}</span>
-                <span className="text-neutral-400 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">↗</span>
+                <span className="text-neutral-600 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">↗</span>
               </a>
 
               <nav aria-label="Footer">
@@ -2856,7 +2871,8 @@ function SignatureFooter() {
             className="flex flex-1 flex-col items-center justify-center overflow-hidden py-3 sm:py-6"
             style={{ ['--sig-base' as string]: 'clamp(18px, 5.2vw, 76px)' }}
           >
-            <motion.p
+            <motion.div
+              role="img"
               aria-label="Hafiz Muhammad Aqeel — HMA"
               style={{ fontSize, letterSpacing: tracking }}
               className="flex items-baseline justify-center whitespace-nowrap leading-[0.9] select-none"
@@ -2867,7 +2883,7 @@ function SignatureFooter() {
                   {i < words.length - 1 && <motion.span style={{ width: gap }} className="inline-block" />}
                 </span>
               ))}
-            </motion.p>
+            </motion.div>
             <motion.p
               style={{ opacity: caption }}
               className="mt-6 sm:mt-8 text-center text-[11px] font-medium uppercase tracking-[0.24em] text-neutral-500"

@@ -1,8 +1,24 @@
 'use client'
 
-import React from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 
 export default function SnakeMarquee({ tools }: { tools: { name: string, imgSrc: string }[] }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting)
+      },
+      { rootMargin: '300px' }
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
   const ITEM_WIDTH = 240; 
   const TRACK_WIDTH = tools.length * ITEM_WIDTH;
   
@@ -23,7 +39,10 @@ export default function SnakeMarquee({ tools }: { tools: { name: string, imgSrc:
   const delayPerItem = waveCycleDuration / ITEMS_PER_WAVELENGTH;
 
   return (
-    <div className="relative w-full max-w-full overflow-hidden mask-edges py-10 sm:py-12">
+    <div 
+      ref={containerRef}
+      className="relative w-full max-w-full overflow-hidden mask-edges py-10 sm:py-12 [content-visibility:auto] [contain-intrinsic-size:1px_120px]"
+    >
       <style>{`
         .mask-edges {
           mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
@@ -33,6 +52,7 @@ export default function SnakeMarquee({ tools }: { tools: { name: string, imgSrc:
           display: flex;
           width: max-content;
           animation: snake-lr ${horizontalDuration * 2}s linear infinite;
+          animation-play-state: ${inView ? 'running' : 'paused'};
           will-change: transform;
         }
         @keyframes snake-lr {
@@ -45,6 +65,7 @@ export default function SnakeMarquee({ tools }: { tools: { name: string, imgSrc:
           justify-content: center;
           align-items: center;
           animation: snake-bob ${bobDuration}s ease-in-out infinite alternate;
+          animation-play-state: ${inView ? 'running' : 'paused'};
           will-change: transform;
         }
         @keyframes snake-bob {
@@ -79,8 +100,10 @@ export default function SnakeMarquee({ tools }: { tools: { name: string, imgSrc:
                     <img 
                       src={tool.imgSrc} 
                       alt={tool.name} 
+                      width={36}
+                      height={36}
+                      decoding="async"
                       className="h-8 sm:h-9 w-auto max-w-[120px] object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105" 
-                      loading="lazy"
                     />
                     <span className="text-[15px] sm:text-[16px] font-semibold text-[#0F172A] tracking-normal whitespace-nowrap group-hover:text-[#000000] transition-colors">
                       {tool.name}
