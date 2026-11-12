@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hma-portfolio.vercel.app/sitemap.xml
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://www.hma.solutions/sitemap.xml

@@ -15,7 +15,7 @@ import {
 } from 'framer-motion'
 import SnakeMarquee from '@/src/components/ui/SnakeMarquee'
 import Reveal from '@/src/components/ui/reveal'
-import { ChevronUp, ChevronDown, Volume2, VolumeX, Sparkles, ArrowUpRight, X, Maximize2, Play } from 'lucide-react'
+import { ChevronUp, ChevronDown, Volume2, VolumeX, Sparkles, ArrowUpRight, ArrowDown, X, Maximize2, Play } from 'lucide-react'
 import {
   springs,
   springViewport,
@@ -37,8 +37,8 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 const HERO_DELAY = 2.35
 const CONTAINER = 'relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-8 lg:px-12'
 const SECTION_Y = 'py-14 sm:py-24 lg:py-32'
-// STUDIO CONFIGURATION: Update with your primary domain email if different
-const EMAIL = 'inbid8409@gmail.com'
+// STUDIO CONFIGURATION: Official business email
+const EMAIL = 'hafiz.aqeel@hma.solutions'
 const WHATSAPP_NUMBER = '+923262851468'
 const WHATSAPP_URL = 'https://wa.me/923262851468'
 
@@ -104,13 +104,13 @@ const SELECTED_PROJECTS: SelectedWorkItem[] = [
   {
     n: '01',
     title: 'WaqasGFX',
-    tag: 'WEBSITE DESIGN & DEVELOPMENT',
+    tag: 'Interactive Web',
     description:
-      'A custom portfolio experience for a thumbnail designer and video editor, combining a distinctive visual identity with modern web development.',
+      'Custom portfolio experience for a thumbnail designer and video editor, combining distinctive visual identity with high-performance Next.js engineering.',
     client: 'WaqasGFX',
     role: 'Lead Dev & Design',
     stack: 'Next.js · Framer Motion',
-    badge: 'INTERACTIVE WEB',
+    badge: 'Interactive Web',
     src: 'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto/v1790316294/Screen_Recording_2026-09-14_185240_pobr0u.mp4',
     poster: 'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto,so_2/v1790316294/Screen_Recording_2026-09-14_185240_pobr0u.jpg',
     aspect: 'landscape',
@@ -121,13 +121,13 @@ const SELECTED_PROJECTS: SelectedWorkItem[] = [
   {
     n: '02',
     title: 'Sneaker Campaign',
-    tag: 'VERTICAL REEL & AI COMMERCIAL',
+    tag: 'AI Commercial',
     description:
-      'A cinematic AI-generated sneaker campaign featuring realistic materials, studio-inspired lighting, and social-first creative direction.',
+      'Cinematic AI-generated campaign featuring photorealistic materials, studio-inspired lighting, and social-first creative direction.',
     client: 'Concept Project',
     role: 'AI Film Direction',
     stack: 'Generative AI · 4K CGI',
-    badge: 'VERTICAL REEL (9:16)',
+    badge: 'Vertical Reel',
     src: 'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto/v1790316374/Creating_fashion_video_with_snea__20260918153012_wooon2.mp4',
     poster:
       'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto,so_1/v1790316374/Creating_fashion_video_with_snea__20260918153012_wooon2.jpg',
@@ -138,13 +138,13 @@ const SELECTED_PROJECTS: SelectedWorkItem[] = [
   {
     n: '03',
     title: 'Perfume Film',
-    tag: 'CGI PRODUCT COMMERCIAL',
+    tag: 'Cinematic CGI',
     description:
-      'A luxury-inspired fragrance film built around atmospheric lighting, fluid visuals, and cinematic product storytelling.',
+      'Luxury fragrance film built with fluid CGI visuals, atmospheric lighting, and cinematic product storytelling.',
     client: 'Concept Project',
     role: 'Generative CGI',
     stack: 'CGI Simulation · Sound Design',
-    badge: 'CINEMATIC CGI (16:9)',
+    badge: 'Cinematic 3D',
     src: 'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto/v1790316408/Man_spraying_perfume_1080p_20260918154146_nd9suw.mp4',
     poster:
       'https://res.cloudinary.com/ds6xosm2j/video/upload/f_auto,q_auto,so_1/v1790316408/Man_spraying_perfume_1080p_20260918154146_nd9suw.jpg',
@@ -292,19 +292,35 @@ interface SocialItem {
   path: string
 }
 
-const FACEBOOK_URL = 'https://web.facebook.com/hma.solutions1'
+const INSTAGRAM_URL = 'https://www.instagram.com/hmasolution/'
+const X_URL = 'https://x.com/hmasolution'
+const FACEBOOK_URL = 'https://web.facebook.com/hmasolution'
 
-// STUDIO CONFIGURATION: Update with your verified social handles
+// STUDIO CONFIGURATION: Official social channels for HMA Solutions
 const SOCIALS: SocialItem[] = [
   {
-    name: 'WhatsApp',
-    url: WHATSAPP_URL,
-    path: 'M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44s-.56-1.35-.77-1.85c-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29',
+    name: 'Instagram',
+    url: INSTAGRAM_URL,
+    path:
+      'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z',
+  },
+  {
+    name: 'X (Twitter)',
+    url: X_URL,
+    path:
+      'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
   },
   {
     name: 'Facebook',
     url: FACEBOOK_URL,
-    path: 'M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.704 0-1.527.186-1.748.595-.145.267-.184.697-.184 1.411v1.974h4.156l-.547 3.667h-3.609v7.98h-4.832z',
+    path:
+      'M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.704 0-1.527.186-1.748.595-.145.267-.184.697-.184 1.411v1.974h4.156l-.547 3.667h-3.609v7.98h-4.832z',
+  },
+  {
+    name: 'WhatsApp',
+    url: WHATSAPP_URL,
+    path:
+      'M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44s-.56-1.35-.77-1.85c-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29',
   },
 ]
 
@@ -494,7 +510,7 @@ function Magnetic({ children, strength = 0.25, className = '' }: { children: Rea
   )
 }
 
-/** Primary CTA with interactive arrow disc */
+/** Primary CTA with continuous sliding arrow micro-interaction */
 function PrimaryCTA({
   href,
   children,
@@ -515,20 +531,31 @@ function PrimaryCTA({
         href={href}
         target={target}
         rel={rel}
-        className={`group relative inline-flex items-center gap-3 sm:gap-4 rounded-full bg-[#15202F] text-white font-medium shadow-[0_1px_0_rgba(255,255,255,0.2)_inset,0_18px_40px_-18px_rgba(21,32,47,0.45)] transition-all duration-500 hover:bg-[#0f1722] hover:shadow-[0_1px_0_rgba(255,255,255,0.25)_inset,0_24px_50px_-18px_rgba(21,32,47,0.55)] hover:-translate-y-0.5 active:translate-y-0 ${
+        className={`group relative inline-flex items-center gap-3 sm:gap-4 rounded-full bg-[#15202F] text-white font-medium shadow-[0_1px_0_rgba(255,255,255,0.2)_inset,0_18px_40px_-18px_rgba(21,32,47,0.45)] transition-all duration-300 hover:bg-[#0c131d] hover:shadow-[0_1px_0_rgba(255,255,255,0.25)_inset,0_24px_50px_-18px_rgba(21,32,47,0.55)] hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15202F]/40 focus-visible:ring-offset-2 ${
           lg
-            ? 'h-12 xs:h-13 sm:h-[72px] pl-6 xs:pl-7 sm:pl-10 pr-1.5 sm:pr-2 text-[13.5px] xs:text-[14.5px] sm:text-lg'
-            : 'h-10 xs:h-11 sm:h-14 pl-5 xs:pl-6 sm:pl-7 pr-1.5 sm:pr-2 text-[12.5px] xs:text-[13.5px] sm:text-[15px]'
+            ? 'h-12 xs:h-13 sm:h-[68px] pl-6 xs:pl-7 sm:pl-9 pr-2 sm:pr-2.5 text-[13.5px] xs:text-[14.5px] sm:text-lg'
+            : 'h-11 xs:h-12 sm:h-14 pl-5 xs:pl-6 sm:pl-7 pr-1.5 sm:pr-2 text-[12.5px] xs:text-[13.5px] sm:text-[15px]'
         }`}
       >
-        <span>{children}</span>
+        <span className="tracking-tight">{children}</span>
         <span
-          className={`grid place-items-center rounded-full bg-white text-[#15202F] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-rotate-45 ${
-            lg ? 'h-9 w-9 xs:h-10 xs:w-10 sm:h-14 sm:w-14' : 'h-7 w-7 xs:h-8 xs:w-8 sm:h-10 sm:w-10'
+          className={`relative overflow-hidden grid place-items-center rounded-full bg-white text-[#15202F] shadow-sm transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            lg ? 'h-9 w-9 xs:h-10 xs:w-10 sm:h-13 sm:w-13' : 'h-8 w-8 sm:h-10 sm:w-10'
           }`}
           aria-hidden="true"
         >
-          →
+          {/* Primary arrow exiting to top-right on hover */}
+          <ArrowUpRight
+            className={`transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:opacity-0 ${
+              lg ? 'w-5 h-5 sm:w-6 sm:h-6' : 'w-4 h-4 sm:w-4.5 sm:h-4.5'
+            }`}
+          />
+          {/* Secondary replacement arrow entering seamlessly from bottom-left */}
+          <ArrowUpRight
+            className={`absolute -translate-x-4 translate-y-4 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 ${
+              lg ? 'w-5 h-5 sm:w-6 sm:h-6' : 'w-4 h-4 sm:w-4.5 sm:h-4.5'
+            }`}
+          />
         </span>
       </a>
     </Magnetic>
@@ -652,32 +679,13 @@ function DesktopCardContent({
             {project.description}
           </p>
 
-          {/* Meta: Tidy 3-column list (CLIENT / ROLE / STACK) */}
-          <div className="grid grid-cols-3 gap-3 pt-5 mt-5 border-t border-[rgba(15,23,42,0.06)]">
-            <div>
-              <span className="block text-[12px] font-mono uppercase tracking-[0.08em] text-[#8A93A3] mb-1">
-                CLIENT
-              </span>
-              <span className="block text-[13.5px] lg:text-[14px] font-medium text-[#0F172A] leading-snug">
-                {project.client}
-              </span>
-            </div>
-            <div>
-              <span className="block text-[12px] font-mono uppercase tracking-[0.08em] text-[#8A93A3] mb-1">
-                ROLE
-              </span>
-              <span className="block text-[13.5px] lg:text-[14px] font-medium text-[#0F172A] leading-snug">
-                {project.role}
-              </span>
-            </div>
-            <div>
-              <span className="block text-[12px] font-mono uppercase tracking-[0.08em] text-[#8A93A3] mb-1">
-                STACK
-              </span>
-              <span className="block text-[13.5px] lg:text-[14px] font-medium text-[#0F172A] leading-snug">
-                {project.stack}
-              </span>
-            </div>
+          {/* Clean Attribution Line */}
+          <div className="flex items-center gap-2 pt-4 mt-4 border-t border-[rgba(15,23,42,0.06)] text-[12.5px] font-mono text-[#5B6475]">
+            <span className="text-[#0F172A] font-semibold">{project.client}</span>
+            <span className="text-[#8A93A3]">·</span>
+            <span>{project.role}</span>
+            <span className="text-[#8A93A3]">·</span>
+            <span className="text-[#8A93A3]">{project.stack}</span>
           </div>
 
           {/* Button: "View Site" for web, "Watch Film" for film */}
@@ -688,17 +696,20 @@ function DesktopCardContent({
                   href={project.siteUrl || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F172A] text-white text-[13.5px] font-semibold tracking-tight shadow-md hover:bg-[#1E293B] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A] focus-visible:outline-none"
+                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F172A] text-white text-[13.5px] font-semibold tracking-tight shadow-md hover:bg-[#1E293B] hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A] focus-visible:outline-none"
                 >
                   <span>View Site</span>
-                  <ArrowUpRight className="w-4 h-4 text-white" />
+                  <span className="relative overflow-hidden w-4 h-4 flex items-center justify-center" aria-hidden="true">
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-3 group-hover:-translate-y-3" />
+                    <ArrowUpRight className="w-4 h-4 absolute -translate-x-3 translate-y-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0 group-hover:translate-y-0" />
+                  </span>
                 </a>
                 <button
                   type="button"
                   onClick={() => onOpenVideo(project)}
-                  className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-[#F4F5F7] border border-[rgba(15,23,42,0.08)] text-[#0F172A] text-[13px] font-medium hover:bg-[#EAECEF] transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A]"
+                  className="group inline-flex items-center gap-2 px-4 py-3 rounded-full bg-[#F4F5F7] border border-[rgba(15,23,42,0.08)] text-[#0F172A] text-[13px] font-medium hover:bg-[#EAECEF] hover:-translate-y-0.5 active:scale-[0.98] transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A]"
                 >
-                  <Play className="w-3.5 h-3.5 fill-[#0F172A]" />
+                  <Play className="w-3.5 h-3.5 fill-[#0F172A] transition-transform duration-300 group-hover:scale-110" />
                   <span>Preview Video</span>
                 </button>
               </div>
@@ -706,9 +717,9 @@ function DesktopCardContent({
               <button
                 type="button"
                 onClick={() => onOpenVideo(project)}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#0F172A] text-white text-[13.5px] font-semibold tracking-tight shadow-md hover:bg-[#1E293B] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A] focus-visible:outline-none"
+                className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#0F172A] text-white text-[13.5px] font-semibold tracking-tight shadow-md hover:bg-[#1E293B] hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A] focus-visible:outline-none"
               >
-                <Play className="w-3.5 h-3.5 fill-white text-white" />
+                <Play className="w-3.5 h-3.5 fill-white text-white transition-transform duration-300 group-hover:scale-110" />
                 <span>Watch Film</span>
               </button>
             )}
@@ -1058,12 +1069,12 @@ function MobileCardContent({
   }, [isActive])
 
   return (
-    <article className="relative w-full max-w-[420px] mx-auto h-[min(calc(100svh-95px),640px)] rounded-[22px] xs:rounded-[26px] bg-white border border-[rgba(15,23,42,0.08)] p-4 xs:p-5 shadow-[0_16px_40px_-20px_rgba(15,23,42,0.14)] flex flex-col justify-between overflow-hidden select-none">
+    <article className="relative w-full max-w-[420px] mx-auto h-[min(calc(100svh-100px),580px)] rounded-[22px] xs:rounded-[26px] bg-white border border-[rgba(15,23,42,0.08)] p-4 xs:p-5 shadow-[0_16px_40px_-20px_rgba(15,23,42,0.14)] flex flex-col justify-between overflow-hidden select-none">
       {/* 1. Header Row */}
-      <div className="flex items-center justify-between pb-2 border-b border-[rgba(15,23,42,0.06)] w-full">
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F4F5F7] border border-[rgba(15,23,42,0.06)] text-[10.5px] font-mono uppercase tracking-[0.1em] text-[#0F172A] font-semibold">
+      <div className="flex items-center justify-between pb-2.5 border-b border-[rgba(15,23,42,0.06)] w-full">
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F4F5F7] border border-[rgba(15,23,42,0.06)] text-[11px] font-mono uppercase tracking-[0.1em] text-[#0F172A] font-semibold">
           <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-          <span>Project {project.n}</span>
+          <span>{project.tag}</span>
         </div>
         <span className="text-[11px] font-mono tracking-wider text-[#0F172A] font-bold">
           {project.n} / 03
@@ -1075,7 +1086,7 @@ function MobileCardContent({
         {project.vertical ? (
           <div
             onClick={() => onOpenVideo(project)}
-            className="group/mob relative cursor-pointer aspect-[9/16] h-[min(calc(100svh-360px),270px)] min-h-[185px] w-auto rounded-[16px] overflow-hidden bg-[#0F172A]/5 border border-[rgba(15,23,42,0.08)] shadow-sm flex items-center justify-center"
+            className="group/mob relative cursor-pointer aspect-[9/16] h-[min(calc(100svh-330px),280px)] min-h-[190px] w-auto rounded-[16px] overflow-hidden bg-[#0F172A]/5 border border-[rgba(15,23,42,0.08)] shadow-sm flex items-center justify-center active:scale-[0.99] transition-transform"
           >
             <video
               ref={videoRef}
@@ -1084,15 +1095,10 @@ function MobileCardContent({
               loop
               muted
               playsInline
-              // @ts-expect-error webkit prefix for iOS Safari
               webkit-playsinline="true"
               preload="auto"
               className="w-full h-full object-contain"
             />
-            <div className="absolute top-2 left-2 z-20 flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-black/10 text-[9px] font-mono font-medium text-[#0F172A] uppercase shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-              <span>{project.badge}</span>
-            </div>
             <div className="absolute inset-0 bg-[#0F172A]/15 opacity-0 active:opacity-100 transition-opacity flex items-center justify-center">
               <div className="p-2 rounded-full bg-white text-[#0F172A] shadow-md">
                 <Play className="w-3.5 h-3.5 fill-[#0F172A]" />
@@ -1102,7 +1108,7 @@ function MobileCardContent({
         ) : (
           <div
             onClick={() => onOpenVideo(project)}
-            className="group/mob relative cursor-pointer aspect-[16/9] w-full rounded-[16px] overflow-hidden bg-[#0F172A]/5 border border-[rgba(15,23,42,0.08)] shadow-sm flex items-center justify-center"
+            className="group/mob relative cursor-pointer aspect-[16/9] w-full rounded-[16px] overflow-hidden bg-[#0F172A]/5 border border-[rgba(15,23,42,0.08)] shadow-sm flex items-center justify-center active:scale-[0.99] transition-transform"
           >
             <video
               ref={videoRef}
@@ -1111,15 +1117,10 @@ function MobileCardContent({
               loop
               muted
               playsInline
-              // @ts-expect-error webkit prefix for iOS Safari
               webkit-playsinline="true"
               preload="auto"
               className="w-full h-full object-contain"
             />
-            <div className="absolute top-2 left-2 z-20 flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-black/10 text-[9px] font-mono font-medium text-[#0F172A] uppercase shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-              <span>{project.badge}</span>
-            </div>
             <div className="absolute inset-0 bg-[#0F172A]/15 opacity-0 active:opacity-100 transition-opacity flex items-center justify-center">
               <div className="p-2 rounded-full bg-white text-[#0F172A] shadow-md">
                 <Play className="w-3.5 h-3.5 fill-[#0F172A]" />
@@ -1129,77 +1130,47 @@ function MobileCardContent({
         )}
       </div>
 
-      {/* 3. Text & Meta Info */}
-      <div className="w-full flex flex-col gap-1 text-left">
-        <div className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.1em] text-[#5B6475]">
-          <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-          <span>{project.tag}</span>
-        </div>
-
-        <h3 className="text-[clamp(1.4rem,5.5vw,1.85rem)] font-semibold tracking-[-0.03em] text-[#0F172A] leading-[1.08]">
+      {/* 3. Text Info — Streamlined and readable */}
+      <div className="w-full flex flex-col gap-1 text-left pt-1">
+        <h3 className="text-[clamp(1.35rem,5.2vw,1.75rem)] font-semibold tracking-[-0.03em] text-[#0F172A] leading-[1.1]">
           {project.title}
         </h3>
 
-        <p className="text-[12px] xs:text-[12.5px] leading-[1.48] text-[#5B6475] line-clamp-2">
+        <p className="text-[12.5px] xs:text-[13px] leading-[1.5] text-[#5B6475] line-clamp-2">
           {project.description}
         </p>
-
-        {/* 3-column Meta */}
-        <div className="grid grid-cols-3 gap-2 pt-2 pb-1 border-t border-[rgba(15,23,42,0.06)] text-left">
-          <div>
-            <span className="block text-[9.5px] font-mono uppercase tracking-[0.08em] text-[#8A93A3]">
-              CLIENT
-            </span>
-            <span className="block text-[11px] xs:text-[11.5px] font-medium text-[#0F172A] truncate">
-              {project.client}
-            </span>
-          </div>
-          <div>
-            <span className="block text-[9.5px] font-mono uppercase tracking-[0.08em] text-[#8A93A3]">
-              ROLE
-            </span>
-            <span className="block text-[11px] xs:text-[11.5px] font-medium text-[#0F172A] truncate">
-              {project.role}
-            </span>
-          </div>
-          <div>
-            <span className="block text-[9.5px] font-mono uppercase tracking-[0.08em] text-[#8A93A3]">
-              STACK
-            </span>
-            <span className="block text-[11px] xs:text-[11.5px] font-medium text-[#0F172A] truncate">
-              {project.stack}
-            </span>
-          </div>
-        </div>
       </div>
 
-      {/* 4. Action Buttons */}
-      <div className="pt-2 border-t border-[rgba(15,23,42,0.06)] w-full">
+      {/* 4. Action Buttons (min-h-[44px] touch targets) */}
+      <div className="pt-2.5 border-t border-[rgba(15,23,42,0.06)] w-full">
         {project.buttonType === 'web' ? (
           <div className="flex gap-2 w-full">
             <a
               href={project.siteUrl || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 h-10 xs:h-11 min-h-[40px] flex items-center justify-center gap-1.5 rounded-full bg-[#0F172A] text-white text-[12.5px] font-semibold tracking-tight shadow-sm active:scale-[0.98] transition-transform cursor-pointer"
+              className="group flex-1 h-11 min-h-[44px] flex items-center justify-center gap-2 rounded-full bg-[#0F172A] text-white text-[13px] font-semibold tracking-tight shadow-sm active:scale-[0.98] transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A]"
             >
               <span>View Site</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+              <span className="relative overflow-hidden w-3.5 h-3.5 flex items-center justify-center" aria-hidden="true">
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-3 group-hover:-translate-y-3" />
+                <ArrowUpRight className="w-3.5 h-3.5 absolute -translate-x-3 translate-y-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0 group-hover:translate-y-0" />
+              </span>
             </a>
             <button
               type="button"
               onClick={() => onOpenVideo(project)}
-              className="h-10 xs:h-11 min-h-[40px] px-3.5 flex items-center justify-center gap-1.5 rounded-full bg-[#F4F5F7] border border-[rgba(15,23,42,0.08)] text-[#0F172A] text-[12px] font-medium active:scale-[0.98] transition-transform cursor-pointer"
+              className="h-11 min-h-[44px] px-4 flex items-center justify-center gap-1.5 rounded-full bg-[#F4F5F7] border border-[rgba(15,23,42,0.08)] text-[#0F172A] text-[12.5px] font-medium active:scale-[0.98] transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A]"
             >
-              <Play className="w-3 h-3 fill-[#0F172A]" />
-              <span>Video</span>
+              <Play className="w-3.5 h-3.5 fill-[#0F172A]" />
+              <span>Preview</span>
             </button>
           </div>
         ) : (
           <button
             type="button"
             onClick={() => onOpenVideo(project)}
-            className="w-full h-10 xs:h-11 min-h-[40px] flex items-center justify-center gap-2 rounded-full bg-[#0F172A] text-white text-[12.5px] font-semibold tracking-tight shadow-sm active:scale-[0.98] transition-transform cursor-pointer"
+            className="w-full h-11 min-h-[44px] flex items-center justify-center gap-2 rounded-full bg-[#0F172A] text-white text-[13px] font-semibold tracking-tight shadow-sm active:scale-[0.98] transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#0F172A]"
           >
             <Play className="w-3.5 h-3.5 fill-white text-white" />
             <span>Watch Film</span>
@@ -1945,7 +1916,7 @@ function Hero() {
               >
                 <img
                   src="/portrait.jpg"
-                  alt="Hafiz Muhammad Aqeel, Creative Developer & AI Builder"
+                  alt="Hafiz Muhammad Aqeel, Founder of HMA Solutions"
                   className="h-full w-full object-cover object-[50%_25%] grayscale"
                 />
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/50" />
@@ -1989,22 +1960,24 @@ function Hero() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 min-h-[44px] items-center gap-2 rounded-full bg-[#15202F] px-4.5 xs:px-5 text-[12.5px] xs:text-[13px] font-medium text-white shadow-[0_4px_14px_rgba(21,32,47,0.18)] transition-all active:scale-95"
+                className="group inline-flex h-11 min-h-[44px] items-center gap-2 rounded-full bg-[#15202F] px-5 text-[13px] font-medium text-white shadow-[0_1px_0_rgba(255,255,255,0.2)_inset,0_8px_20px_-6px_rgba(21,32,47,0.35)] transition-all duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15202F]/40 focus-visible:ring-offset-2"
               >
-                <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
                 <span>Let&apos;s Talk</span>
+                <span className="relative overflow-hidden w-3.5 h-3.5 flex items-center justify-center" aria-hidden="true">
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-3 group-hover:-translate-y-3" />
+                  <ArrowUpRight className="w-3.5 h-3.5 absolute -translate-x-3 translate-y-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0 group-hover:translate-y-0" />
+                </span>
               </a>
 
               <a
                 href="#work"
-                className="inline-flex h-11 min-h-[44px] items-center gap-1.5 rounded-full border border-black/[0.08] bg-white/80 px-4 xs:px-4.5 text-[12.5px] xs:text-[13px] font-medium text-[#15202F] backdrop-blur-md shadow-sm transition-all active:scale-95"
+                className="group inline-flex h-11 min-h-[44px] items-center gap-1.5 rounded-full border border-black/[0.09] bg-white/85 px-4.5 text-[13px] font-medium text-[#15202F] backdrop-blur-md shadow-sm transition-all duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15202F]/30 focus-visible:ring-offset-2"
               >
-                <svg className="w-3.5 h-3.5 text-[#15202F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z" />
-                </svg>
                 <span>View My Work</span>
+                <span className="relative overflow-hidden w-3.5 h-3.5 flex items-center justify-center" aria-hidden="true">
+                  <ArrowDown className="w-3.5 h-3.5 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-3" />
+                  <ArrowDown className="w-3.5 h-3.5 absolute -translate-y-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+                </span>
               </a>
             </motion.div>
 
@@ -2024,24 +1997,26 @@ function Hero() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center gap-2.5 rounded-full bg-[#15202F] px-6 text-[14px] font-medium text-white shadow-[0_4px_16px_rgba(21,32,47,0.2)] transition-all duration-300 hover:bg-[#0f1722] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+                  className="group inline-flex h-12 items-center gap-2.5 rounded-full bg-[#15202F] px-6 text-[14px] font-medium text-white shadow-[0_1px_0_rgba(255,255,255,0.2)_inset,0_10px_24px_-8px_rgba(21,32,47,0.35)] transition-all duration-300 hover:bg-[#0c131d] hover:shadow-[0_1px_0_rgba(255,255,255,0.25)_inset,0_18px_36px_-8px_rgba(21,32,47,0.48)] hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15202F]/40 focus-visible:ring-offset-2"
                 >
-                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                  </svg>
                   <span>Let&apos;s Talk</span>
+                  <span className="relative overflow-hidden w-4 h-4 flex items-center justify-center" aria-hidden="true">
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-3 group-hover:-translate-y-3" />
+                    <ArrowUpRight className="w-4 h-4 absolute -translate-x-3 translate-y-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0 group-hover:translate-y-0" />
+                  </span>
                 </a>
               </Magnetic>
 
               <Magnetic strength={0.2}>
                 <a
                   href="#work"
-                  className="inline-flex h-12 items-center gap-2 rounded-full border border-black/[0.08] bg-white/70 px-6 text-[14px] font-medium text-[#15202F] backdrop-blur-md shadow-sm transition-all duration-300 hover:bg-white/95 hover:border-black/15 hover:-translate-y-0.5 active:translate-y-0"
+                  className="group inline-flex h-12 items-center gap-2 rounded-full border border-black/[0.09] bg-white/75 px-6 text-[14px] font-medium text-[#15202F] backdrop-blur-md shadow-sm transition-all duration-300 hover:bg-white hover:border-black/20 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15202F]/30 focus-visible:ring-offset-2"
                 >
-                  <svg className="w-4 h-4 text-[#15202F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z" />
-                  </svg>
                   <span>View My Work</span>
+                  <span className="relative overflow-hidden w-4 h-4 flex items-center justify-center" aria-hidden="true">
+                    <ArrowDown className="w-4 h-4 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-3" />
+                    <ArrowDown className="w-4 h-4 absolute -translate-y-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+                  </span>
                 </a>
               </Magnetic>
             </motion.div>
@@ -2106,7 +2081,7 @@ function Hero() {
             >
               <img
                 src="/portrait.jpg"
-                alt="Hafiz Muhammad Aqeel, Creative Developer & AI Builder"
+                alt="Hafiz Muhammad Aqeel, Founder of HMA Solutions"
                 className="h-full w-full object-cover object-[50%_25%] grayscale"
               />
             </motion.div>
@@ -2250,7 +2225,7 @@ const WebDev3DVisual = memo(function WebDev3DVisual({ active = true }: { active?
         </div>
         <div className="flex items-center gap-1 rounded-full border border-black/[0.06] bg-white/80 px-2 sm:px-2.5 py-0.5 text-[9px] sm:text-[9.5px] font-mono text-[#536174]">
           <span className="text-[#15202F] font-semibold">https://</span>
-          <span>hma.studio</span>
+          <span>hma.solutions</span>
         </div>
         <span className="text-[9px] sm:text-[10px] text-[#6B7280]">60fps</span>
       </div>
@@ -2504,41 +2479,23 @@ const ServiceCard3D = memo(function ServiceCard3D({
             <p className="mt-2 text-[13px] xs:text-[13.5px] sm:text-[14px] leading-[1.58] sm:leading-[1.62] text-[#536174]">
               {service.description}
             </p>
-
-            {service.deliverables && (
-              <p className="mt-2.5 text-[11.5px] xs:text-[12px] font-mono text-[#5B6475] tracking-tight">
-                ✦ {service.deliverables}
-              </p>
-            )}
-
-            {/* Tech tags stagger pop-in (scale 0.82 -> 1) with spring */}
-            <motion.ul variants={tagContainerVariant} className="mt-3.5 sm:mt-5 flex flex-wrap gap-1.5">
-              {service.tags.map((t) => (
-                <motion.li
-                  key={t}
-                  variants={tagPopInVariant}
-                  className="rounded-full border border-black/[0.08] bg-white px-2.5 sm:px-3 py-1 text-[12px] font-medium text-[#15202F] shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
-                >
-                  {t}
-                </motion.li>
-              ))}
-            </motion.ul>
           </div>
 
-          <div className="mt-5 pt-3.5 sm:mt-7 sm:pt-5 border-t border-black/[0.06]">
+          <div className="mt-5 pt-3.5 sm:mt-6 sm:pt-4 border-t border-black/[0.06]">
             <a
               href={`${WHATSAPP_URL}?text=${encodeURIComponent(service.inquiryMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between text-[#15202F] group/link"
+              className="flex items-center justify-between text-[#15202F] group/link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15202F]/20 rounded-lg py-0.5"
               aria-label={`${service.ctaLabel} via WhatsApp`}
             >
               <span className="relative text-[13px] sm:text-[14px] font-semibold tracking-tight">
                 {service.ctaLabel}
                 <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[#15202F] transition-transform duration-300 group-hover/link:scale-x-100" />
               </span>
-              <span className="grid h-8 w-8 sm:h-9 sm:w-9 place-items-center rounded-full border border-black/[0.08] bg-black/[0.02] text-[#15202F] transition-all duration-300 group-hover/link:bg-[#15202F] group-hover/link:border-[#15202F] group-hover/link:text-white">
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              <span className="relative overflow-hidden grid h-8 w-8 sm:h-9 sm:w-9 place-items-center rounded-full border border-black/[0.08] bg-black/[0.02] text-[#15202F] transition-all duration-300 group-hover/link:bg-[#15202F] group-hover/link:border-[#15202F] group-hover/link:text-white shadow-xs">
+                <ArrowUpRight className="h-4 w-4 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/link:translate-x-3 group-hover/link:-translate-y-3 group-hover/link:opacity-0" />
+                <ArrowUpRight className="h-4 w-4 absolute -translate-x-3 translate-y-3 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/link:translate-x-0 group-hover/link:translate-y-0 group-hover/link:opacity-100" />
               </span>
             </a>
           </div>
@@ -2754,16 +2711,9 @@ const ProcessCard3D = memo(function ProcessCard3D({
                   {step.n}
                 </motion.span>
               </span>
-              <div className="flex items-center gap-1.5">
-                <span className="inline-flex items-center gap-1 rounded-full border border-black/[0.08] bg-black/[0.03] px-2.5 py-0.5 text-[11.5px] font-mono font-semibold uppercase tracking-[0.14em] text-[#15202F]">
-                  {step.phase}
-                </span>
-                {step.estimate && (
-                  <span className="inline-flex items-center rounded-full border border-black/[0.06] bg-white px-2 py-0.5 text-[10.5px] font-mono text-[#536174]">
-                    {step.estimate}
-                  </span>
-                )}
-              </div>
+              <span className="inline-flex items-center gap-1 rounded-full border border-black/[0.08] bg-black/[0.03] px-2.5 py-0.5 text-[11px] sm:text-[11.5px] font-mono font-semibold uppercase tracking-[0.14em] text-[#15202F]">
+                Stage {step.n}
+              </span>
             </div>
 
             <div className="mb-3 sm:mb-4">
@@ -2776,31 +2726,10 @@ const ProcessCard3D = memo(function ProcessCard3D({
             <h3 className="text-[17px] xs:text-[18px] sm:text-[19px] font-medium tracking-tight text-[#15202F]">
               {step.title}
             </h3>
-            <p className="text-[12px] xs:text-[12.5px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] text-[#536174] mt-0.5">
-              {step.subtitle}
-            </p>
 
             <p className="mt-2 text-[13px] xs:text-[13.5px] sm:text-[14px] leading-[1.58] sm:leading-[1.62] text-[#536174]">
               {step.description}
             </p>
-          </div>
-
-          <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-black/[0.06] flex flex-col gap-1 sm:gap-1.5">
-            <span className="text-[12px] uppercase tracking-[0.14em] text-[#15202F] font-semibold">
-              Deliverables
-            </span>
-            {/* Deliverable chips pop in with spring */}
-            <motion.div variants={tagContainerVariant} className="flex flex-wrap gap-1.5">
-              {step.deliverables.map((d) => (
-                <motion.span
-                  key={d}
-                  variants={tagPopInVariant}
-                  className="rounded-md border border-black/[0.08] bg-white px-2 sm:px-2.5 py-0.5 text-[12px] font-medium text-[#15202F] shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
-                >
-                  {d}
-                </motion.span>
-              ))}
-            </motion.div>
           </div>
         </article>
       </TiltCard>
@@ -2954,7 +2883,7 @@ function SignatureFooter() {
             </div>
 
             <div className="flex flex-col-reverse items-center gap-4 pt-5 sm:flex-row sm:justify-between">
-              <p className="text-[12px] text-neutral-500">© 2026 HMA. All rights reserved.</p>
+              <p className="text-[12px] text-neutral-500">© 2026 HMA Solutions. All rights reserved.</p>
               <ul className="flex items-center gap-2">
                 {SOCIALS.map((s) => {
                   const isLink = Boolean(s.url && s.url !== '#')
@@ -3189,40 +3118,17 @@ const JamesCard = memo(function JamesCard() {
               </div>
             </div>
 
-            {/* Scope Metadata */}
-            <div className="mt-3.5 flex items-center gap-1.5 text-[11px] font-mono text-[#536174] transition-colors duration-500 group-hover:text-white/70">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              <span>AI Video Ads · Creative Editing</span>
-            </div>
-
             {/* Quotation Icon */}
-            <div className="mt-3 text-[#536174]/20 transition-colors duration-500 group-hover:text-white/20" aria-hidden="true">
+            <div className="mt-3 text-[#536174]/25 transition-colors duration-500 group-hover:text-white/20" aria-hidden="true">
               <svg width="18" height="14" viewBox="0 0 24 18" fill="currentColor">
                 <path d="M0 18V10.2857C0 4.60714 3.42857 0.857143 8.57143 0L10.2857 2.57143C6.85714 3.42857 5.14286 5.57143 4.71429 8.57143H10.2857V18H0ZM13.7143 18V10.2857C13.7143 4.60714 17.1429 0.857143 22.2857 0L24 2.57143C20.5714 3.42857 18.8571 5.57143 18.4286 8.57143H24V18H13.7143Z" />
               </svg>
             </div>
 
             {/* Quote Body */}
-            <blockquote className="mt-2 text-[13.5px] xs:text-[14px] sm:text-[14.5px] leading-[1.62] text-[#536174] font-normal transition-colors duration-500 group-hover:text-white/90">
+            <blockquote className="mt-2.5 text-[13.5px] xs:text-[14px] sm:text-[14.5px] leading-[1.62] text-[#536174] font-normal transition-colors duration-500 group-hover:text-white/90">
               &ldquo;Honestly, the AI ads turned out way better than I expected. The videos looked real, the editing was clean, and the hooks actually made my products look interesting. Really happy with how they came out.&rdquo;
             </blockquote>
-
-            {/* Highlights Tag with pop-in spring */}
-            <motion.div variants={tagContainerVariant} className="mt-3.5 flex flex-wrap gap-1.5">
-              {[
-                '✦ AI Video Ads',
-                'Creative Editing',
-                'Product Marketing',
-              ].map((tag) => (
-                <motion.span
-                  key={tag}
-                  variants={tagPopInVariant}
-                  className="rounded-md border border-black/[0.08] bg-white px-2.5 py-0.5 text-[12px] font-mono text-[#15202F] transition-all duration-500 group-hover:bg-white/10 group-hover:border-white/15 group-hover:text-white/80"
-                >
-                  {tag}
-                </motion.span>
-              ))}
-            </motion.div>
           </div>
 
           {/* Client Footer */}
@@ -3289,12 +3195,6 @@ const WaqasFeaturedCard = memo(function WaqasFeaturedCard() {
               </span>
             </div>
 
-            {/* Scope Metadata */}
-            <div className="mt-3.5 flex items-center gap-1.5 text-[11.5px] font-mono text-[#536174] transition-colors duration-500 group-hover:text-white/70">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              <span>Website Design · UI/UX · Motion</span>
-            </div>
-
             {/* Quotation Icon */}
             <div className="mt-3.5 text-[#15202F]/20 transition-colors duration-500 group-hover:text-white/20" aria-hidden="true">
               <svg width="22" height="18" viewBox="0 0 24 18" fill="currentColor">
@@ -3306,19 +3206,6 @@ const WaqasFeaturedCard = memo(function WaqasFeaturedCard() {
             <blockquote className="mt-2.5 text-[14px] xs:text-[15px] sm:text-[16px] lg:text-[16.5px] leading-[1.62] text-[#15202F] font-normal tracking-[-0.01em] transition-colors duration-500 group-hover:text-white">
               &ldquo;Hafiz Aqeel did a great job with my website. I wanted something clean but still different from other design portfolios, and he understood the vibe pretty quickly. The animations and overall look came out really nice. Small details <Serif>made a big difference</Serif>.&rdquo;
             </blockquote>
-
-            {/* Technology Chips with spring pop-in */}
-            <motion.div variants={tagContainerVariant} className="mt-4 flex flex-wrap gap-1.5">
-              {['Website Design', 'UI/UX', 'Motion & Animation'].map((t) => (
-                <motion.span
-                  key={t}
-                  variants={tagPopInVariant}
-                  className="rounded-full border border-black/[0.08] bg-white px-2.5 sm:px-3 py-1 text-[12px] font-medium text-[#15202F] shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-500 group-hover:bg-white/10 group-hover:border-white/15 group-hover:text-white/80"
-                >
-                  {t}
-                </motion.span>
-              ))}
-            </motion.div>
           </div>
 
           {/* Client Footer */}
@@ -3336,10 +3223,6 @@ const WaqasFeaturedCard = memo(function WaqasFeaturedCard() {
                 </p>
               </div>
             </div>
-
-            <span className="hidden xs:inline-flex items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-0.5 text-[12px] font-medium text-emerald-800 transition-all duration-500 group-hover:bg-emerald-400/20 group-hover:border-emerald-400/30 group-hover:text-emerald-300">
-              ✓ Verified
-            </span>
           </div>
         </article>
       </TiltCard>
@@ -3377,40 +3260,17 @@ const EmmaCard = memo(function EmmaCard() {
               </span>
             </div>
 
-            {/* Scope Metadata */}
-            <div className="mt-3.5 flex items-center gap-1.5 text-[11px] font-mono text-[#536174] transition-colors duration-500 group-hover:text-white/70">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              <span>AI Ads · Product Videos</span>
-            </div>
-
             {/* Quotation Icon */}
-            <div className="mt-3 text-[#536174]/20 transition-colors duration-500 group-hover:text-white/20" aria-hidden="true">
+            <div className="mt-3 text-[#536174]/25 transition-colors duration-500 group-hover:text-white/20" aria-hidden="true">
               <svg width="18" height="14" viewBox="0 0 24 18" fill="currentColor">
                 <path d="M0 18V10.2857C0 4.60714 3.42857 0.857143 8.57143 0L10.2857 2.57143C6.85714 3.42857 5.14286 5.57143 4.71429 8.57143H10.2857V18H0ZM13.7143 18V10.2857C13.7143 4.60714 17.1429 0.857143 22.2857 0L24 2.57143C20.5714 3.42857 18.8571 5.57143 18.4286 8.57143H24V18H13.7143Z" />
               </svg>
             </div>
 
             {/* Quote Body */}
-            <blockquote className="mt-2 text-[13.5px] xs:text-[14px] sm:text-[14.5px] leading-[1.62] text-[#536174] font-normal transition-colors duration-500 group-hover:text-white/90">
+            <blockquote className="mt-2.5 text-[13.5px] xs:text-[14px] sm:text-[14.5px] leading-[1.62] text-[#536174] font-normal transition-colors duration-500 group-hover:text-white/90">
               &ldquo;The AI video ads came out really good. The product shots looked natural and the editing kept everything interesting without making it feel overdone. Definitely a much better way to show my products on social media.&rdquo;
             </blockquote>
-
-            {/* Highlights Tag with pop-in spring */}
-            <motion.div variants={tagContainerVariant} className="mt-3.5 flex flex-wrap gap-1.5">
-              {[
-                '✦ AI Ads',
-                'Product Videos',
-                'Social Media',
-              ].map((tag) => (
-                <motion.span
-                  key={tag}
-                  variants={tagPopInVariant}
-                  className="rounded-md border border-black/[0.08] bg-white px-2.5 py-0.5 text-[12px] font-mono text-[#15202F] transition-all duration-500 group-hover:bg-white/10 group-hover:border-white/15 group-hover:text-white/80"
-                >
-                  {tag}
-                </motion.span>
-              ))}
-            </motion.div>
           </div>
 
           {/* Client Footer */}
@@ -3592,14 +3452,14 @@ export default function HomePage() {
 
               <FadeIn delay={0.2} className="mt-4 sm:mt-10 flex items-center gap-3 text-[10.5px] sm:text-[11px] tracking-[0.2em] uppercase text-[#536174] font-medium">
                 <span className="h-px w-8 bg-neutral-300" />
-                <span>Hafiz Muhammad Aqeel · Creative Studio</span>
+                <span>Hafiz Muhammad Aqeel · Founder, HMA Solutions</span>
               </FadeIn>
             </div>
 
             <div className="lg:col-span-5 lg:col-start-8 flex flex-col justify-end">
               <FadeIn className="flex flex-col gap-3 sm:gap-4">
                 <p className="text-[13.5px] xs:text-[14.5px] sm:text-[16.5px] leading-[1.6] sm:leading-[1.65] text-[#15202F] font-normal">
-                  HMA brings design, development, and AI-powered creativity together in one streamlined partnership. You work directly with the person building your project, with clear communication, deliberate execution, and attention to the details that make digital experiences stand out.
+                  HMA Solutions brings design, development, and AI-powered creativity together in one streamlined partnership. You work directly with the person building your project, with clear communication, deliberate execution, and attention to the details that make digital experiences stand out.
                 </p>
                 <p className="hidden sm:block text-[14px] sm:text-[15px] leading-[1.6] text-[#536174]">
                   Every build unites engineering rigor and visual restraint — ensuring your digital presence is technically resilient, fast, and crafted with uncompromising aesthetic quality.
